@@ -571,3 +571,13 @@ def process_transcript(text):
     )  # Comment this if you do not want to remove the stopwords and return text_single_block
 
     return text_without_stopwords
+
+
+def restore_punct(text):
+    from rpunct import RestorePuncts
+
+    # The default language is 'english'
+    rpunct = RestorePuncts()
+    punctuated = rpunct.punctuate(text)
+
+    return punctuated
